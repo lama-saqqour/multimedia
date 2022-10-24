@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="container">
+<div id="presentation-area">
+    <!-- slides go here -->
+    <section class="presentation">
+
+        <!-- Slide 1 -->
+        <div class="slide show">
+            <div class="heading">
+                Высокоуровневая обработка текстовой информации
+            </div>
+            <div class="content grid center">
+                <h3 class="title">
+                    ML алгоритмы распознавания и создания текста 
+                </h3>
+				<h4>ИУ3И-31М <br/> Ляма Саккур</h4>
+            </div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="slide">
+            <div class="heading">
+                Что такое Natural Language Processing?
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Natural Language Processing (далее – NLP) – обработка естественного языка </li>
+					<li>Подраздел информатики и AI</li>
+					<li>Посвящённый тому, как компьютеры анализируют естественные (человеческие) языки. </li>
+					<li>NLP позволяет применять алгоритмы машинного обучения для текста и речи.</li>
+
+                </ul>
+                <img src= "NLP.jpg" style="width:100%;"/>
+            </div>
+        </div>
+		<!-- Slide 2 -->
+        <div class="slide">
+            <div class="heading">
+                Cortana
+            </div>
+            <div class="content grid">
+                <img src= "cortana.png" style="width:100%;" />
+            </div>
+        </div>
+		<!-- Slide 3 -->
+        <div class="slide">
+            <div class="heading">
+                Siri
+            </div>
+            <div class="content grid">
+                <img src= "siri.jpg"  style="width:100%;"  />
+            </div>
+        </div>
+		<!-- Slide 4 -->
+        <div class="slide">
+            <div class="heading">
+                Gmail
+            </div>
+            <div class="content grid">
+                <image src= "gmail.gif" style="width:100%;"   />
+            </div>
+        </div>
+		<!-- Slide 5 -->
+        <div class="slide">
+            <div class="heading">
+                Этапы NLP
+            </div>
+            <div class="content grid">
+                <ol>
+					<li>Токенизация по предложениям.</li>
+					<li>Токенизация по словам.</li>
+					<li>Лемматизация и стемминг текста.</li>
+					<li>Стоп-слова. </li>
+					<li>Мешок слов.</li>
+					<li>TF-IDF.</li>
+
+                </ol>
+            </div>
+        </div>
+		<!-- Slide 6 -->
+        <div class="slide">
+            <div class="heading">
+                1. Токенизация по предложениям
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Токенизация (иногда – сегментация) по предложениям – это процесс разделения письменного языка на предложения-компоненты. </li>
+					<li>Точка . Идея выглядит довольно простой. </li>
+					<li>Проблема: точка используется и в сокращениях: Mr. Ул. руб.</li>
+					<li>Таблица сокращений </li>
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 7 -->
+        <div class="slide">
+            <div class="heading">
+                2. Токенизация по словам
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Токенизация (иногда – сегментация) по словам – это процесс разделения предложений на слова-компоненты.</li>
+					<li>Пробел </li>
+					<li>Английский: His head => his, head</li>
+					<li>Русский: Его голова => Его, голова</li>
+					<li>Проблема: Арабский местоимения: رأسه => رأسه</li>
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 8 -->
+        <div class="slide">
+            <div class="heading">
+                3. Лемматизация и стемминг текста
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>	Обычно тексты содержат разные грамматические формы одного и того же слова, а также могут встречаться однокоренные слова.  </li>
+
+					<li>dog, dogs, dog’s, dogs’ => dog </li>
+
+					<li>Лемматизация и стемминг преследуют цель привести все встречающиеся словоформы к одной, нормальной словарной форме. </li>
+
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 9 -->
+        <div class="slide">
+            <div class="heading">
+                разница между лемматизацией и стеммингом
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Стемминг – это грубый эвристический процесс, который отрезает «лишнее» от корня слов, часто это приводит к потере словообразовательных суффиксов.</li>
+					<li>Лемматизация – это более тонкий процесс, который использует словарь и морфологический анализ, чтобы в итоге привести слово к его канонической форме – лемме.</li>
+					<li>Стеммер действует без знания контекста и не понимает разницу между словами, которые имеют разный смысл в зависимости от части речи. </li>
+					<li>Стеммеры проще внедрить и они работают быстрее. Плюс, более низкая «аккуратность» может не иметь значения в некоторых случаях.</li>
+
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 10 -->
+        <div class="slide">
+            <div class="heading">
+                Стемминг или Лемматизация? 
+            </div>
+            <div class="content grid">
+                <ul>
+					<li> Слово good – это лемма для слова better. Стеммер не увидит эту связь, так как здесь нужно сверяться со словарем.</li>
+					<li>Слово play – это базовая форма слова playing. Тут справятся и стемминг, и лемматизация.</li>
+
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 11 -->
+        <div class="slide">
+            <div class="heading">
+                4. Стоп-слова
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Стоп-слова – это слова, которые выкидываются из текста до/после обработки текста. </li>
+					<li>Когда мы применяем машинное обучение к текстам, такие слова могут добавить много шума, поэтому необходимо избавляться от нерелевантных слов.</li>
+					<li>артикли, междометия, союзы и т.д.</li>
+					<li>все зависит от конкретного случая</li>
+
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 12 -->
+        <div class="slide">
+            <div class="heading">
+                5. Мешок слов
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Алгоритмы машинного обучения не могут напрямую работать с сырым текстом, поэтому необходимо конвертировать текст в наборы цифр (векторы). Это называется извлечением признаков.</li>
+					<li>Мешок слов – это популярная и простая техника извлечения признаков, используемая при работе с текстом. Она описывает вхождения каждого слова в текст.</li>
+					<li>Чтобы использовать модель, нам нужно:
+						<ul>
+							<li>Определить словарь известных слов (токенов).</li>
+							<li>Выбрать степень присутствия известных слов.</li>
+						</ul>
+					</li>
+					<li>схожие документы имеют схожее содержимое</li>
+
+
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 13 -->
+        <div class="slide">
+            <div class="heading">
+                1. Загружаем данные
+            </div>
+            <div class="content grid">
+			<table>
+			<td>
+				<ul>
+					<li>Наши данные:<br/>
+					I like this movie, it's funny.<br/>I hate this movie.<br/>This was awesome!<br/>I like it. Nice one. I love it.</li>
+					<li>Загрузить данные в виде массива<br/>["I like this movie, it's funny.", 'I hate this movie.', 'This was awesome! I like it.', 'Nice one. I love it.']</li>
+
+                </ul>
+				</td><td>
+					<img src= "db.png"/>
+                </td>
+			</table>
+            </div>
+        </div>
+		<!-- Slide 14 -->
+        <div class="slide">
+            <div class="heading">
+                2. Определяем словарь
+            </div>
+            <div class="content grid">
+			<table>
+			<td>
+				<ul>
+					<li>Соберем все уникальные слова из 4 загруженных предложений, игнорируя регистр, пунктуацию и односимвольные токены. </li>
+					<li>Это и будет наш словарь (известные слова).</li>
+
+                </ul>
+				</td><td>
+					<img src= "dictionary.png"/>
+                </td>
+			</table>
+            </div>
+        </div>
+		<!-- Slide 15 -->
+        <div class="slide">
+            <div class="heading">
+                3. Создаем векторы документа
+            </div>
+            <div class="content grid">
+            <table>
+			<td>
+				<ul>
+					<li>оценить слова в документе</li>
+					<li>На этом шаге наша цель – превратить сырой текст в набор цифр.</li>
+					<li>После этого, мы используем эти наборы как входные данные для модели машинного обучения. </li>
+					<li>Простейший метод скоринга – это отметить наличие слов, то есть ставить 1, если есть слово и 0 при его отсутствии.</li>
+                </ul>
+				</td><td>
+					<img src= "01.png"/>
+                </td>
+			</table>
+            </div>
+        </div>
+		<!-- Slide 16 -->
+        <div class="slide">
+            <div class="heading">
+                4. мешок слов
+            </div>
+            <div class="content grid">
+                <img src="table.png" style="width:100%" />
+            </div>
+        </div>
+		<!-- Slide 17 -->
+        <div class="slide">
+            <div class="heading">
+                6. TF-IDF
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Если мы оцениваем документ по частоте, это может быть не так много информационного выигрыша. </li>
+					<li>TF-IDF (сокращение от Term Frequency — Inverse Document Frequency) – это статистическая мера для оценки важности слова в документе </li>
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 18 -->
+        <div class="slide">
+            <div class="heading">
+                TF-IDF
+            </div>
+            <div class="content grid">
+                <img src="tf-idf.png" style="height:100%" />
+            </div>
+        </div>
+		<!-- Slide 19 -->
+        <div class="slide">
+            <div class="heading">
+                Recurrent Neural Networks(RNNs)
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Рекуррентные нейронные сети (RNN) являются наиболее мощным алгоритмом для задач на естественном языке, особенно при моделировании последовательных данных.</li>
+					<li>RNN содержат внутреннюю память</li>
+					<li>предыдущий ввод + текущий ввод</li>
+					<li>Выходные данные = текущий ввод + вывод, сгенерированный на предыдущих временных шагах</li>
+                </ul>
+				<img src="law.png"/>
+            </div>
+        </div>
+		<!-- Slide 20 -->
+        <div class="slide">
+            <div class="heading">
+                RNN
+            </div>
+            <div class="content grid">
+                <img src="RNN.png" style="height:100%" />
+            </div>
+        </div>
+		<!-- Slide 21 -->
+        <div class="slide">
+            <div class="heading">
+                BiDirectional RNNs (BRNNs)
+            </div>
+            <div class="content grid">
+                <ul>
+					<li>Выходные данные = текущий ввод + вывод, сгенерированный на предыдущих временных шагах + + вывод, сгенерированный на будущих временных шагах</li>
+                </ul>
+            </div>
+        </div>
+		<!-- Slide 22 -->
+        <div class="slide">
+            <div class="heading">
+                BRNN
+            </div>
+            <div class="content grid">
+                <img src="BRNN.png" style="height:100%" />
+            </div>
+        </div>
+    </section>
+	<section class="counter">
+		1 of 22
+	</section>
+	<section class="navigation">
+		<button id="full-screen" class="btn-screen show">
+			<i class="fas fa-expand"></i>
+		</button>
+
+		<button id="small-screen" class="btn-screen">
+			<i class="fas fa-compress"></i>
+		</button>
+
+		<button id="left-btn" class="btn-screen">
+			<i class="fa fa-caret-left"></i>
+		</button>
+
+		<button id="right-btn" class="btn-screen">
+			<i class="fa fa-caret-right"></i>
+		</button>
+	</section>
+</div>
+</div>
+<script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>
